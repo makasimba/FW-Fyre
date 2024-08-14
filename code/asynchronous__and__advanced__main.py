@@ -58,7 +58,7 @@ async def load_dataset_with_retry(*args, **kwargs):
         logger.warning(f"Network error occurred: {e}. Retrying...")
         raise
 
-async def main(batch_size=1_000):
+async def main(batch_size=10_000):
     progress = await load_progress()
     start_batch = progress['last_batch']
     start_item = progress['last_item']
